@@ -1,4 +1,97 @@
-<h1><%= t "hello" %></h1>
+<style>
+/* Tổng thể */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header chính */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #4CAF50;
+}
+
+/* Header phụ */
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+/* Liên kết nút */
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Nút "New product" */
+a[href*="new_product"] {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+a[href*="new_product"]:hover {
+  background-color: #45a049;
+}
+
+/* Sản phẩm */
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+#products div {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#products div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#products div a {
+  display: block;
+  font-size: 1.1rem;
+  color: #4CAF50;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#products div a:hover {
+  color: #388E3C;
+}
+</style>
+
+<h1><%= t ".title" %></h1>
+
 
 <h2>Products</h2>
 

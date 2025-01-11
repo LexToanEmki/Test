@@ -1,3 +1,93 @@
+<style>
+/* Tổng thể */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header chính */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #4CAF50;
+}
+
+/* Form chỉnh sửa sản phẩm */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input và select trong form */
+form input[type="text"],
+form input[type="number"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Nút Submit */
+form input[type="submit"] {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Liên kết "Cancel" */
+a[href*="cancel"] {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+a[href*="cancel"]:hover {
+  background-color: #d32f2f;
+}
+
+</style>
 <h1>Edit product</h1>
 
 <%= render "form", product: @product %>

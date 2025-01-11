@@ -1,10 +1,110 @@
-<% cache @product do %>
+<style>
+/* Tổng thể */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Tiêu đề sản phẩm */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #4CAF50;
+}
+
+/* Mô tả sản phẩm */
+.product-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-container p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Hình ảnh sản phẩm */
+.product-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Liên kết và nút */
+.product-container a {
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.product-container a[href*="products"] {
+  background-color: #4CAF50;
+}
+
+.product-container a[href*="products"]:hover {
+  background-color: #45a049;
+}
+
+.product-container a[href*="edit"] {
+  background-color: #2196F3;
+}
+
+.product-container a[href*="edit"]:hover {
+  background-color: #1976D2;
+}
+
+/* Nút "Delete" */
+.product-container form {
+  display: inline-block;
+}
+
+.product-container form button {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-container form button:hover {
+  background-color: #d32f2f;
+}
+
+</style>
+
+<div class="product-container">
+  <% cache @product do %>
     <h1><%= @product.name %></h1>
   <% end %>
   
-<%= @product.description %>
-<%= image_tag @product.featured_image if @product.featured_image.attached? %>
+  <p><%= @product.description %></p>
+  <%= image_tag @product.featured_image if @product.featured_image.attached? %>
 
-<%= link_to "Back", products_path %>
-<%= link_to "Edit", edit_product_path(@product) %>
-<%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+  <%= link_to "Back", products_path %>
+  <%= link_to "Edit", edit_product_path(@product) %>
+  <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+</div>
