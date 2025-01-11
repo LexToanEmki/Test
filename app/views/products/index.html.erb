@@ -88,6 +88,25 @@ a[href*="new_product"]:hover {
 #products div a:hover {
   color: #388E3C;
 }
+.button-link {
+  display: inline-block; /* Chuyển link thành khối inline để áp dụng padding và căn chỉnh */
+  background-color: #28a745; /* Màu xanh lá */
+  color: white; /* Màu chữ trắng */
+  text-decoration: none; /* Bỏ gạch chân */
+  font-size: 16px; /* Kích thước chữ */
+  font-weight: bold; /* Chữ đậm */
+  text-align: center; /* Căn giữa chữ */
+  padding: 10px 20px; /* Tạo khoảng đệm để thành nút bấm */
+  border-radius: 5px; /* Bo tròn góc nút */
+  margin-left: 570px; /* Đẩy nút sang phải 100px */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Hiệu ứng chuyển đổi mượt */
+}
+
+.button-link:hover {
+  background-color: #218838; /* Màu xanh lá đậm hơn khi hover */
+  transform: scale(1.05); /* Tăng kích thước nhẹ khi hover */
+}
+
 </style>
 
 <h1><%= t ".title" %></h1>
@@ -95,12 +114,14 @@ a[href*="new_product"]:hover {
 
 <h2>Products</h2>
 
-<%= link_to "New product", new_product_path %>
+<%= link_to "New product", new_product_path, class: "button-link" %>
 
 <div id="products">
   <% @products.each do |product| %>
     <div>
       <%= link_to product.name, product %>
+    
     </div>
+      
   <% end %>
 </div>
